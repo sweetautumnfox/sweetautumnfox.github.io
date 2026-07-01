@@ -25,254 +25,108 @@
 
   <!-- ---------- data ---------- -->
   <script type="text/babel">
-/* Content data for the site. All text is editable placeholder, tailored to
-   Jeongjun Lee — AI / theoretical ML / active inference. Replace freely. */
+/* Content data for the site — Jeongjun Lee (theoretical ML / active inference). */
 
 window.SITE = {
   person: {
     name: "Jeongjun Lee",
     han: "이정준",
-    role: "BSc student",
+    role: "BSc student, research intern",
     affiliation: "Gwangju Institute of Science and Technology (GIST)",
     location: "Gwangju, South Korea",
     email: "sweetautumnfox@gm.gist.ac.kr",
     blurbShort:
-      "I study the mathematics of learning and self-organizing inference — where theoretical machine learning meets active inference and the free-energy principle.",
-    interestsLine: ["Active inference", "Theoretical ML", "Free-energy principle", "Bayesian agents"],
-    status: "Looking for MSc/PhD opportunities & collaborators — 2027",
+      "I study how intelligent behavior emerges — drawing on active inference and the free-energy principle, and using machine-learning theory and statistical physics to build a rigorous framework for growing intelligence rather than designing it.",
+    interestsLine: ["Active inference", "Free-energy principle", "Theoretical ML", "Emergence"],
+    status: "BSc expected Feb 2027 · Data Science Lab, GIST",
   },
 
   about: {
     paragraphs: [
-      "I'm an undergraduate researcher at GIST working at the intersection of <em>theoretical machine learning</em> and <em>active inference</em>. I'm drawn to the question of how a single principle — minimizing variational free energy — might explain perception, action, and learning under one roof, and what that means formally for the agents we build.",
-      "Lately I've been thinking about the geometry of variational objectives: when amortized inference is tight, what the ELBO is really measuring, and how non-stationarity reshapes the policies an active-inference agent should prefer. I like proofs that turn into intuition, and intuition that survives contact with experiments.",
-      "I came to this from a love of physics and probability. I care about clarity — both in the math and in the writing — and I keep an open <strong>Notes</strong> feed where half-formed ideas live before they're ready to be papers.",
+      "I'm an undergraduate researcher at the <strong>Data Science Lab</strong>, GIST (advisor: Prof. Sundong Kim), working at the intersection of <em>theoretical machine learning</em> and <em>active inference</em>. My focus is the emergence of intelligence — how intelligent behavior arises from simple principles.",
+      "I am currently working towards answering the question of how intelligent behaviors emerge, drawing core ideas from active inference and the free-energy principle, and utilizing machine-learning theory and statistical physics to develop a rigorous framework for analyzing how to <em>grow</em> intelligence, rather than design it.",
+      "My most recent work proposes a forcing condition under which simple prediction can lead to identification — explaining the dark-room and enlightened-room problems in active inference, and how intelligent agents like ourselves might mitigate them. I plan to continue this line to explain more complex facets of intelligence.",
     ],
     interests: [
-      { n: "01", title: "Active inference", body: "Free-energy-minimizing agents: planning as inference, epistemic vs. pragmatic value, and what makes exploration principled." },
-      { n: "02", title: "Theoretical ML", body: "Generalization, variational bounds, and the geometry of objectives — why methods work, not just that they do." },
-      { n: "03", title: "Bayesian computation", body: "Amortized & structured inference, message passing, and the price of approximation in real models." },
+      { n: "01", title: "Active inference & the free-energy principle", body: "Perception, action, and learning as free-energy minimization — and what that framework formally implies for the agents we study and build." },
+      { n: "02", title: "Theoretical machine learning", body: "Using learning theory and statistical physics to understand when and how intelligent behavior can be grown rather than hand-designed." },
+      { n: "03", title: "Emergence of intelligence", body: "How complex, intelligent behavior arises from simple principles — including when prediction alone is enough to identify hidden structure." },
     ],
   },
 
   projects: [
     {
       n: "01",
-      title: "Tightness of <em>amortized</em> variational bounds",
-      status: { label: "In progress", cls: "status-active" },
-      tags: ["theory", "variational inference"],
+      title: "When Prediction Is Not Enough: Identifying Hidden Structure under Partial Observation",
+      status: { label: "Accepted — EIML @ ICML 2026", cls: "status-preprint" },
+      tags: ["active inference", "world models", "theory"],
       desc: [
-        "When does an amortized encoder close the gap to the true posterior — and when is the residual irreducible? We characterize the amortization gap geometrically and give conditions under which a finite-capacity encoder is asymptotically tight.",
+        "We give a forcing condition on an environment under which simple prediction can lead to identification in world-model learning — connecting it to the dark-room and enlightened-room problems in active inference. Accepted to the Epistemic Intelligence in Machine Learning (EIML) Workshop at ICML 2026; camera-ready and poster in preparation.",
       ],
-      figure: "figure — amortization gap vs. encoder capacity",
     },
     {
       n: "02",
-      title: "Active inference in <em>non-stationary</em> bandits",
-      status: { label: "Preprint soon", cls: "status-preprint" },
-      tags: ["active inference", "experiments"],
+      title: "A framework for the <em>emergence</em> of intelligence",
+      status: { label: "In progress", cls: "status-active" },
+      tags: ["active inference", "statistical physics", "theory"],
       desc: [
-        "Expected-free-energy policies adapt their explore/exploit balance automatically as the environment drifts. We compare against Thompson sampling and show where epistemic value pays off under regime shifts.",
+        "An ongoing effort to explain complex emergent properties of intelligence, drawing on the foundations of statistical physics and active inference — aiming at a rigorous account of how to grow intelligence rather than design it.",
       ],
-      figure: "figure — cumulative regret under drift",
-    },
-    {
-      n: "03",
-      title: "A geometric reading of the <em>ELBO</em>",
-      status: { label: "Note → paper", cls: "status-active" },
-      tags: ["theory", "exposition"],
-      desc: [
-        "An expository project growing out of the Notes feed: viewing the evidence lower bound as a projection in the space of distributions, and what curvature there tells us about optimization difficulty.",
-      ],
-      figure: "figure — information geometry of the ELBO",
-    },
-    {
-      n: "04",
-      title: "<em>vfe-lab</em> — a toolkit for free-energy agents",
-      status: { label: "Open source", cls: "status-preprint" },
-      tags: ["software", "JAX"],
-      desc: [
-        "A small, readable JAX library for prototyping active-inference agents: generative models, expected-free-energy planning, and message-passing inference, built for teaching and quick experiments.",
-      ],
-      figure: "figure — library architecture diagram",
     },
   ],
 
   news: [
-    { date: "May 2026", kind: "Talk", html: 'Gave a student seminar, <a class="link" href="#">“Planning as Inference, Gently”</a>, at the GIST AI reading group.' },
-    { date: "Apr 2026", kind: "Preprint", html: 'New note-to-preprint on amortization gaps is in preparation — drafts are appearing in <a class="link" href="#" data-route="notes">Notes</a>.' },
-    { date: "Mar 2026", kind: "Award", html: "Received an undergraduate research excellence scholarship from GIST." },
-    { date: "Feb 2026", kind: "Reading group", html: "Started a weekly active-inference reading group — open to anyone, drop me a line." },
-    { date: "Jan 2026", kind: "Lab", html: "Joined the machine learning theory lab as an undergraduate research assistant." },
-    { date: "Nov 2025", kind: "Course", html: "Finished a graduate course on probabilistic graphical models (top of class)." },
+    { date: "2026", kind: "Accepted", html: 'Our paper <em>“When Prediction Is Not Enough: Identifying Hidden Structure under Partial Observation”</em> was accepted to the EIML Workshop at ICML 2026 — preparing the camera-ready version and poster.' },
+    { date: "Jun 2026", kind: "Selected", html: "Selected for the Research Track of the GIST AI Graduate School Creative Fusion Competition (AX Challenge)." },
+    { date: "May 2025", kind: "Lab", html: "Joined the Data Science Lab at GIST as a research intern (advisor: Prof. Sundong Kim)." },
+    { date: "Apr 2024", kind: "Lab", html: "Research internship at the Autonomous Computation Systems Lab (ACSL), GIST — studying Neural Radiance Fields (NeRF)." },
   ],
 
   // reverse-chronological short posts (the interactive centerpiece)
   // `summary` shows in the feed; `full` shows on the post's own page.
-  notes: [
-    {
-      id: "n12", date: "2026-06-06", title: "The ELBO is a <em>projection</em>, and that explains a lot",
-      tags: ["theory", "active-inference"], liked: false, readMins: 3,
-      summary: "If you squint, maximizing the ELBO is projecting the true posterior onto your variational family under a KL geometry — and the gap you can never close is just the distance from that family, a property of your <code>q</code>, not your optimizer.",
-      full: [
-        "If you squint, maximizing the ELBO is projecting the true posterior onto your variational family under a KL geometry. Concretely: among all distributions <code>q</code> in your chosen family, you're picking the one closest (in reverse KL) to the true posterior <code>p(z|x)</code>. The “gap” you can never close — the difference between the bound and the true log-evidence — is just the distance from the posterior to that family. It's a property of <code>q</code>, not of your optimizer.",
-        "I find this clarifying because it separates two failures that usually get blamed on each other. If the bound is loose, either (a) your family is too small to reach the posterior, or (b) your optimizer hasn't found the closest point in the family yet. Geometry vs. search. They want different fixes — a richer family vs. a better init or more steps — and conflating them wastes days.",
-        "It also makes the <strong>amortization</strong> story cleaner. Amortized inference stacks a second gap on top of the first: now you're not even allowed to find the best <code>q</code> per datapoint, you have to predict it from <code>x</code> with a shared encoder. So you have the family gap <em>and</em> the encoder gap, and they fail for different reasons. I keep wanting to draw the little right-triangle picture — posterior, family projection, encoder's guess — and call it a day. Maybe that picture is the next note.",
-      ],
-    },
-    {
-      id: "n11", date: "2026-05-28", title: "Epistemic value is just curiosity with a budget",
-      tags: ["active-inference", "meta"], liked: true, readMins: 2,
-      summary: "Expected free energy splits into pragmatic and epistemic terms — and the epistemic term is exactly the information gain you'd pay for, so an active-inference agent is curious only up to what curiosity buys it later.",
-      full: [
-        "Expected free energy (EFE) splits cleanly into two pieces: a <em>pragmatic</em> term (get to the preferred outcome) and an <em>epistemic</em> term (reduce uncertainty about hidden states). Textbooks present these as two separate drives the agent balances. I think that framing undersells the point.",
-        "The thing nobody says loudly enough: the epistemic term <em>is</em> the expected information gain — the very quantity you would pay for if information had a price. So an active-inference agent isn't curious in some open-ended, decorative way. It's curious exactly up to the point where reducing uncertainty improves its expected outcomes. Curiosity with a budget, and the budget is set by the goal.",
-        "This is why I find EFE more satisfying than bolting an exploration bonus onto a reward. The exploration isn't a separate hyperparameter you tune; it falls out of the same objective that drives exploitation. When the two terms disagree, that disagreement is informative — it usually means the generative model is over- or under-confident about its own uncertainty.",
-      ],
-    },
-    {
-      id: "n10", date: "2026-05-19", title: "A proof I liked this week",
-      tags: ["math", "reading"], liked: false, readMins: 2,
-      summary: "Re-read the data-processing inequality proof through the chain rule of mutual information. Three lines, and it explains why you can't conjure information by post-processing.",
-      full: [
-        "Re-read the data-processing inequality (DPI) proof that goes through the chain rule of mutual information. If <code>X → Y → Z</code> is a Markov chain, then <code>I(X;Z) ≤ I(X;Y)</code>. The proof is essentially three lines: expand <code>I(X;Y,Z)</code> two ways with the chain rule, use that <code>I(X;Z|Y)=0</code> by the Markov property, and the inequality drops out because mutual information is non-negative.",
-        "What I love is how much intuition is packed into something so short. It says: no deterministic or stochastic post-processing of <code>Y</code> can manufacture information about <code>X</code> that wasn't already in <code>Y</code>. You can only lose. Every “clever feature transform” lives under this ceiling.",
-        "I'm now half-convinced that a large fraction of ML theory is the DPI wearing a costume. Generalization bounds, the impossibility of certain estimators, why bottlenecks compress — squint and the same non-creation-of-information principle keeps showing up. Probably an overstatement. Probably not by much.",
-      ],
-    },
-    {
-      id: "n9", date: "2026-05-11", title: "Non-stationarity breaks my favorite assumption",
-      tags: ["active-inference", "experiments"], liked: false, readMins: 3,
-      summary: "Watching an EFE agent in a drifting bandit: when the arm means move, the agent's <em>own</em> uncertainty estimate is what tells it to go look again — no explicit exploration bonus needed.",
-      full: [
-        "Spent the day watching an expected-free-energy agent in a drifting bandit — the kind where arm means slowly random-walk instead of staying fixed. The i.i.d. assumption that makes most bandit theory tidy is exactly what's violated here, and it's fascinating to watch what an inference-driven agent does about it.",
-        "The nice surprise: when the arm means move, the agent's <em>own</em> posterior uncertainty is what tells it to go look again. As its beliefs about a neglected arm get stale, their entropy grows, the epistemic term lights up, and the agent re-samples — no explicit exploration bonus, no ε schedule. The exploration is endogenous. Lovely when it works.",
-        "Maddening when it doesn't: if the generative model's prior is too confident about how slowly things drift, the agent under-explores and gets caught flat-footed by a regime shift. So the open question I keep circling is how to set the model's <strong>volatility</strong> — ideally learn it online. Hierarchical priors (a slowly-varying belief about how fast things vary) feel like the right shape, but the inference gets heavy fast, and I haven't found a version that's both stable and cheap. Next experiment.",
-      ],
-    },
-    {
-      id: "n8", date: "2026-05-02", title: "On writing math you'll understand in a year",
-      tags: ["meta", "exposition"], liked: true, readMins: 2,
-      summary: "Note to self: name the quantities. <code>q_phi(z|x)</code> is fine in a paper, but the version of a note that survives is the one where I wrote “the encoder's guess.”",
-      full: [
-        "Note to self, written after failing to parse my own notes from three months ago: <strong>name the quantities</strong>. In a paper, <code>q_phi(z|x)</code> is fine — the reader has the surrounding scaffolding and a notation table. In my own notebook, the version that survives is the one where I also wrote, in plain words, “the encoder's guess at the latent.”",
-        "Future-me is a collaborator who has forgotten everything and is slightly annoyed. Symbols are compression, and compression is lossy when you've lost the codebook. The plain-language gloss is the codebook.",
-        "Concrete habit I'm adopting: every time I introduce a symbol in a note, I write the one-line English meaning right next to it, even if it feels redundant in the moment. It always feels redundant in the moment. It is never redundant in the future.",
-      ],
-    },
-    {
-      id: "n7", date: "2026-04-24", title: "Free energy, but for a thermostat",
-      tags: ["active-inference", "intuition"], liked: false, readMins: 2,
-      summary: "The cleanest toy for the free-energy principle I've found: a thermostat has a generative model (“it should be 21°C”) and acts to make its sensations match its predictions.",
-      full: [
-        "The cleanest intuition pump for the free-energy principle I've found is a thermostat. It has a tiny generative model of how the world should be — “the temperature is 21°C” — and a single action available, heating, which it uses to make its sensations match that prediction. When the room is cold, prediction error is high; acting (turning on the heat) reduces it.",
-        "Stated that way, homeostasis <em>is</em> inference. The setpoint is a prior preference; the control loop is active inference with one action and one sensor. It's almost cheating how well it works as a teaching example: there's no learning, no fancy posterior, just the perception-action loop in its most stripped-down form.",
-        "Where it gets interesting is asking what's missing. The thermostat can't <em>learn</em> its setpoint, can't model that the door might open, can't trade off epistemic and pragmatic value because it has nothing to be uncertain about. Each thing you add to fix that is, roughly, a chapter of the active-inference literature. Good toys tell you what the next toy should be.",
-      ],
-    },
-    {
-      id: "n6", date: "2026-04-15", title: "Amortization gap, drawn three ways",
-      tags: ["theory", "exposition"], liked: false, readMins: 2,
-      summary: "Tried to draw the amortization gap as a bar chart, a triangle in distribution space, and a capacity curve. The triangle won.",
-      full: [
-        "Tried to visualize the amortization gap three ways. (1) A bar chart: per-datapoint optimal ELBO vs. amortized ELBO, the difference shaded. Honest but lifeless — it shows that there's a gap, not why. (2) A capacity curve: gap shrinking as encoder width grows. Useful for the experiments section, but it's a summary statistic, not an explanation.",
-        "(3) A triangle in distribution space: the true posterior at one vertex, the best in-family <code>q</code> at another (the family-gap edge), and the encoder's prediction at the third (the amortization-gap edge). The triangle won, easily. It shows both gaps at once, shows that they compose, and shows why a better encoder can't fix a too-small family — different edges.",
-        "Lesson I keep relearning: if a figure needs a paragraph to defend itself, it isn't the right figure yet. The triangle needs a caption, not a defense. I'll redraw it cleanly and it'll probably anchor the ELBO-projection note.",
-      ],
-    },
-    {
-      id: "n5", date: "2026-04-03", title: "Why I distrust a too-tight bound",
-      tags: ["theory", "meta"], liked: false, readMins: 2,
-      summary: "If your variational bound is suspiciously tight on the first try, suspect the model is too simple, not that you're a genius. Tightness is information about the family, not a trophy.",
-      full: [
-        "If your variational bound comes out suspiciously tight on the first try, my advice is to suspect the model before you congratulate yourself. A tight ELBO means the posterior is well-approximated by your variational family — which is great if the family is rich, and a warning if the family is mean-field and the model is one you'd expect to have correlated latents.",
-        "Tightness is information about the <em>family</em>, not a trophy for the researcher. A factorized <code>q</code> being tight on a model with strong posterior dependencies usually means the model isn't using those dependencies — the latents are nearly independent given the data — which is a modeling observation worth chasing, not a checkbox to tick.",
-        "So my habit now: when a bound looks too good, I go looking for the dependency I think should be there and check whether the model actually exercises it. Half the time the tightness is real and boring; half the time it's pointing at something I got wrong upstream.",
-      ],
-    },
-    {
-      id: "n4", date: "2026-03-21", title: "Reading: predictive coding ↔ backprop",
-      tags: ["reading", "active-inference"], liked: false, readMins: 2,
-      summary: "Worked through the claim that predictive-coding networks can approximate backprop. The bridge is real but narrow; what I actually like is the reframing of credit assignment as local message passing.",
-      full: [
-        "Worked through the line of results claiming predictive-coding networks can approximate backpropagation. The bridge is real: under specific conditions — small output errors, particular relaxation dynamics — the local updates a predictive-coding network performs converge to the gradients backprop would compute.",
-        "But the bridge is narrower than the headlines suggest. The conditions matter, and outside them the equivalence degrades. I don't think “the brain does backprop” is the takeaway, and I don't think it needs to be for the work to be interesting.",
-        "What I actually like is the reframing of <strong>credit assignment as local message passing</strong>: each layer corrects itself using only locally available prediction errors, no global backward pass required. Set aside the biology — as a computational lens on how to distribute the work of learning, it's genuinely useful, and it rhymes with the message-passing view of inference I already care about.",
-      ],
-    },
-    {
-      id: "n3", date: "2026-03-09", title: "The smallest active-inference agent",
-      tags: ["active-inference", "software"], liked: true, readMins: 2,
-      summary: "Got a 40-line agent in JAX to plan by minimizing expected free energy over a 2-step horizon. It's tiny and it explores on purpose — the seed of <code>vfe-lab</code>.",
-      full: [
-        "Got a roughly 40-line agent in JAX to plan by minimizing expected free energy over a 2-step horizon. Discrete states, a small generative model, enumerate the policies, score each by EFE, pick the best. Nothing clever in the implementation — the point was to see the whole loop fit on one screen.",
-        "It explores on purpose, which never stops being satisfying to watch. With no reward shaping and no exploration bonus, it still chooses to disambiguate hidden state when that's worth more than going straight for the goal. The behavior emerges from the objective, and you can read the objective in 40 lines.",
-        "This is the seed of <code>vfe-lab</code>. The design rule I'm committing to: <em>readable beats fast</em> until proven otherwise. If a student can't read the planning loop and understand why the agent explored, the library has failed at its main job, no matter how good the benchmarks look.",
-      ],
-    },
-    {
-      id: "n2", date: "2026-02-26", title: "Variational inference is bookkeeping",
-      tags: ["theory", "intuition"], liked: false, readMins: 2,
-      summary: "Half of VI is just deciding which terms you're willing to be wrong about. Mean-field is an honesty policy: “I will pretend these are independent.”",
-      full: [
-        "A framing that's been helping me: half of variational inference is just deciding, in advance, which terms you're willing to be wrong about. The variational family is a declaration of what approximations you'll tolerate, and the optimization is then honest bookkeeping within those rules.",
-        "Mean-field, in this light, is an honesty policy: “I will pretend these latents are independent given the data.” That's not a bug to apologize for; it's a stated assumption with predictable consequences. Once you read it as a policy rather than a limitation, the failure modes stop being surprising — anywhere the true posterior has strong correlations, mean-field will be overconfident, exactly as advertised.",
-        "I like this because it turns “VI is biased” from a vague complaint into a checklist. Which independence did I assume? Where in this model is that false? That's usually where the interesting error lives.",
-      ],
-    },
-    {
-      id: "n1", date: "2026-02-14", title: "Starting this notebook",
-      tags: ["meta"], liked: false, readMins: 1,
-      summary: "A public place for unfinished thoughts. The rule: post before it's polished, link out when it grows up.",
-      full: [
-        "This is a public place for unfinished thoughts. I've kept private research notes for years, and the good ones always seemed to improve the moment I imagined someone else reading them — so I'm moving them into the open.",
-        "The rule is simple: <strong>post before it's polished</strong>, link out when an idea grows up. If something here turns into a real project, it graduates to the Research page and I'll point back to where it started. The notebook stays a place for seeds, not for finished fruit.",
-        "If you're reading this and an idea here sparks something — a counterexample, a reference, a “you should talk to X” — that's the whole point. Let's see what survives contact with other people.",
-      ],
-    },
-  ],
+  notes: [],
 
   cv: [
     {
       h: "Education",
       entries: [
-        { role: "BSc, undergraduate researcher", org: "Gwangju Institute of Science and Technology (GIST)", when: "2023 — 2027 (exp.)", det: "Machine learning theory & active inference. Coursework in probabilistic graphical models, statistical learning, information theory." },
+        { role: "BSc, Electrical Engineering and Computer Science", org: "Gwangju Institute of Science and Technology (GIST)", when: "Mar 2023 — Feb 2027 (expected)", det: "Research intern focusing on theoretical machine learning and the emergence of intelligence." },
+      ],
+    },
+    {
+      h: "Research experience",
+      entries: [
+        { role: "Research intern", org: "Data Science Lab, GIST", when: "May 2025 — present", det: "Advisor: Prof. Sundong Kim. Developing a framework for the emergence of intelligence from statistical physics and active inference; proposed a forcing condition under which simple prediction leads to identification in world-model learning." },
+        { role: "Research intern", org: "Autonomous Computation Systems Lab (ACSL), GIST", when: "Apr 2024 — Jun 2024", det: "Studied extracting 3D representations from 2D images using Neural Radiance Fields (NeRF)." },
+      ],
+    },
+    {
+      h: "Publications",
+      entries: [
+        { role: "When Prediction Is Not Enough: Identifying Hidden Structure under Partial Observation", org: "EIML Workshop, ICML 2026", when: "2026", det: "Jeongjun Lee, Laura Mascarell, Lancelot Da Costa, Ukyo T. Tazawa, Sundong Kim." },
       ],
     },
     {
       h: "Experience",
       entries: [
-        { role: "Undergraduate research assistant", org: "ML Theory Lab, GIST", when: "2026 — present", det: "Variational bounds, amortized inference, and active-inference agents." },
-        { role: "Research intern", org: "Placeholder Lab", when: "Summer 2025", det: "Add internship / project details here." },
-      ],
-    },
-    {
-      h: "Talks",
-      entries: [
-        { role: "Planning as Inference, Gently", org: "GIST AI reading group", when: "May 2026", det: "Introductory talk on active inference for ML students." },
-        { role: "What the ELBO measures", org: "Lab seminar", when: "Mar 2026", det: "" },
+        { role: "Founder", org: "GADA", when: "Apr 2023 — Aug 2025", det: "Founded an early-stage venture and led a 3-person team; designed a travel-planning agent and developed the product concept and brand." },
       ],
     },
     {
       h: "Honors",
       entries: [
-        { role: "Undergraduate research excellence scholarship", org: "GIST", when: "2026", det: "" },
-        { role: "Dean's list", org: "GIST", when: "2024, 2025", det: "" },
+        { role: "Research Track — GIST AI Graduate School Creative Fusion Competition (AX Challenge)", org: "GIST", when: "2026", det: "Selected participant." },
       ],
     },
     {
       h: "Skills",
-      skills: ["Python", "JAX", "PyTorch", "NumPyro", "Probability", "Information theory", "LaTeX", "Julia", "Variational inference", "Optimization"],
+      skills: ["Python", "C/C++", "MATLAB", "NumPy", "SciPy", "Matplotlib", "PyTorch", "JAX", "LaTeX", "HTML"],
     },
   ],
 
   links: [
-    { k: "Email", v: "jeongjun.lee@gm.gist.ac.kr", href: "mailto:jeongjun.lee@gm.gist.ac.kr" },
-    { k: "Google Scholar", v: "scholar.google.com", href: "#" },
-    { k: "GitHub", v: "github.com/jeongjunlee", href: "#" },
-    { k: "OpenReview", v: "openreview.net", href: "#" },
-    { k: "X / Twitter", v: "@jeongjun_ml", href: "#" },
-    { k: "CV (PDF)", v: "download", href: "#" },
+    { k: "Email", v: "sweetautumnfox@gm.gist.ac.kr", href: "mailto:sweetautumnfox@gm.gist.ac.kr" },
+    { k: "GitHub", v: "github.com/sweetautumnfox", href: "https://github.com/sweetautumnfox" },
   ],
 };
   </script>
@@ -481,7 +335,7 @@ function ResearchPage({ setRoute }) {
             <div className="pdesc">
               {pr.desc.map((d, i) => <Html as="p" key={i} html={d} />)}
             </div>
-            <div className="pfig"><span className="ph">{pr.figure}</span></div>
+            {pr.figure && <div className="pfig"><span className="ph">{pr.figure}</span></div>}
           </article>
         ))}
       </div>
@@ -573,11 +427,11 @@ function ContactPage() {
       <div className="contact-grid" style={{ marginTop: 28 }}>
         <div>
           <p className="contact-big">
-            I'm always glad to talk about active inference, variational methods, or research directions — and I'm looking for <span className="serif-italic">MSc/PhD</span> opportunities and collaborators.{" "}
+            I'm always glad to talk about active inference, the free-energy principle, or theoretical machine learning.{" "}
             Write to me at <a href={"mailto:" + p.email}>{p.email}</a>.
           </p>
           <p className="lead measure" style={{ marginTop: 26 }}>
-            Prospective advisors and students especially welcome. If a Note here sparked something, that's the best possible opener.
+            If a question here sparked something, that's the best possible opener.
           </p>
         </div>
         <ul className="links-list">
@@ -623,7 +477,6 @@ function absDate(dateStr) {
 }
 
 const LIKE_KEY = "jl_note_likes_v1";
-const DRAFT_KEY = "jl_note_drafts_v1";
 const OPEN_KEY = "jl_note_open_v1";
 
 function loadJSON(key, fallback) {
@@ -729,72 +582,8 @@ function NoteDetail({ note, prev, next, onClose, onOpen, onTag, liked, onLike })
   );
 }
 
-function Compose({ onAdd }) {
-  const [open, setOpen] = useStateN(false);
-  const [title, setTitle] = useStateN("");
-  const [body, setBody] = useStateN("");
-  const [tags, setTags] = useStateN("");
-
-  const submit = () => {
-    if (!title.trim() && !body.trim()) return;
-    const paras = body.trim() ? body.trim().split("\n").filter(Boolean) : ["…"];
-    onAdd({
-      id: "draft-" + Date.now(),
-      date: new Date().toISOString().slice(0, 10),
-      title: title.trim() || "Untitled note",
-      tags: tags.split(",").map((t) => t.trim().replace(/^#/, "")).filter(Boolean),
-      summary: paras[0],
-      full: paras,
-      readMins: Math.max(1, Math.round(body.split(/\s+/).length / 200)),
-      liked: false,
-      draft: true,
-    });
-    setTitle(""); setBody(""); setTags(""); setOpen(false);
-  };
-
-  return (
-    <div className={"compose" + (open ? " open" : "")}>
-      <button className="ctoggle" onClick={() => setOpen((o) => !o)}>
-        <span style={{ color: "var(--accent)", fontSize: "1rem" }}>{open ? "×" : "+"}</span>
-        {open ? "Drafting a note (stays on this device)" : "Jot a quick idea note…"}
-      </button>
-      {open && (
-        <div className="cform">
-          <input
-            className="ctitle"
-            placeholder="Title — the one-line version of the idea"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <textarea
-            className="cbody"
-            rows="3"
-            placeholder="The thought. One paragraph per line; the first becomes the summary."
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-          />
-          <div className="crow">
-            <input
-              className="ctitle"
-              style={{ maxWidth: 280 }}
-              placeholder="tags, comma, separated"
-              value={tags}
-              onChange={(e) => setTags(e.target.value)}
-            />
-            <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-              <span className="cnote">saved locally · demo</span>
-              <button className="btn" onClick={submit}>Post note</button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
 function NotesPage() {
   const baseNotes = window.SITE.notes;
-  const [query, setQuery] = useStateN("");
   const [activeTags, setActiveTags] = useStateN([]);
   const [openId, setOpenId] = useStateN(() => localStorage.getItem(OPEN_KEY) || null);
   const [likes, setLikes] = useStateN(() => {
@@ -804,18 +593,16 @@ function NotesPage() {
     baseNotes.forEach((n) => { if (n.liked) seed[n.id] = true; });
     return seed;
   });
-  const [drafts, setDrafts] = useStateN(() => loadJSON(DRAFT_KEY, []));
 
   useEffectN(() => { localStorage.setItem(LIKE_KEY, JSON.stringify(likes)); }, [likes]);
-  useEffectN(() => { localStorage.setItem(DRAFT_KEY, JSON.stringify(drafts)); }, [drafts]);
   useEffectN(() => {
     if (openId) localStorage.setItem(OPEN_KEY, openId);
     else localStorage.removeItem(OPEN_KEY);
   }, [openId]);
 
   const allNotes = useMemo(() => {
-    return [...drafts, ...baseNotes].sort((a, b) => (a.date < b.date ? 1 : -1));
-  }, [drafts, baseNotes]);
+    return [...baseNotes].sort((a, b) => (a.date < b.date ? 1 : -1));
+  }, [baseNotes]);
 
   const allTags = useMemo(() => {
     const counts = {};
@@ -833,15 +620,10 @@ function NotesPage() {
   const tagFromDetail = (t) => { setOpenId(null); setActiveTags([t]); window.scrollTo({ top: 0 }); };
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return allNotes.filter((n) => {
-      const tagOk = activeTags.length === 0 || activeTags.every((t) => n.tags.includes(t));
-      if (!tagOk) return false;
-      if (!q) return true;
-      const hay = (n.title + " " + (n.full || [n.summary]).join(" ") + " " + n.tags.join(" ")).toLowerCase();
-      return hay.includes(q);
-    });
-  }, [allNotes, query, activeTags]);
+    return allNotes.filter((n) =>
+      activeTags.length === 0 || activeTags.every((t) => n.tags.includes(t))
+    );
+  }, [allNotes, activeTags]);
 
   /* ---- post page ---- */
   const openIndex = allNotes.findIndex((n) => n.id === openId);
@@ -873,50 +655,39 @@ function NotesPage() {
       <span className="title-stripe" aria-hidden="true"></span>
       <p className="lead notes-intro" style={{ marginTop: 18 }}>
         Short posts, newest first. Half-formed thoughts on active inference, theory, and things I'm reading.
-        Click any note to read the full version — or filter, search, and add your own draft.
+        Click any note to read the full version.
       </p>
 
-      <Compose onAdd={(n) => setDrafts((d) => [n, ...d])} />
-
-      <div className="notes-controls">
-        <label className="note-search">
-          <span className="si">⌕</span>
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="search notes…"
-            aria-label="Search notes"
-          />
-          {query && (
-            <button className="icon-btn" onClick={() => setQuery("")} title="Clear">clear ×</button>
-          )}
-        </label>
-        <div className="tagfilter">
-          {allTags.map(([t, c]) => (
-            <button
-              key={t}
-              className="chip"
-              data-on={activeTags.includes(t)}
-              onClick={() => toggleTag(t)}
-            >
-              #{t} <span className="c">{c}</span>
-            </button>
-          ))}
-          {activeTags.length > 0 && (
-            <button className="chip" onClick={() => setActiveTags([])}>clear ×</button>
-          )}
+      {allTags.length > 0 && (
+        <div className="notes-controls">
+          <div className="tagfilter">
+            {allTags.map(([t, c]) => (
+              <button
+                key={t}
+                className="chip"
+                data-on={activeTags.includes(t)}
+                onClick={() => toggleTag(t)}
+              >
+                #{t} <span className="c">{c}</span>
+              </button>
+            ))}
+            {activeTags.length > 0 && (
+              <button className="chip" onClick={() => setActiveTags([])}>clear ×</button>
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
-      <div className="feed-meta">
-        {filtered.length} {filtered.length === 1 ? "note" : "notes"}
-        {activeTags.length > 0 && " · " + activeTags.map((t) => "#" + t).join(" + ")}
-        {query && ' · matching “' + query + '”'}
-      </div>
+      {allNotes.length > 0 && (
+        <div className="feed-meta">
+          {filtered.length} {filtered.length === 1 ? "note" : "notes"}
+          {activeTags.length > 0 && " · " + activeTags.map((t) => "#" + t).join(" + ")}
+        </div>
+      )}
 
       <div className="feed">
         {filtered.length === 0 ? (
-          <div className="empty">No notes match that. Try clearing a filter.</div>
+          <div className="empty">{activeTags.length ? "No notes match that. Try clearing a filter." : "No notes yet — check back soon."}</div>
         ) : (
           filtered.map((n) => (
             <NoteCard
